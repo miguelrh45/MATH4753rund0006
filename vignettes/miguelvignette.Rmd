@@ -1,0 +1,39 @@
+---
+title: "miguelvignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{miguelvignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+#### miguelcltb creates a random sample for a binomial distribution and creates histogram of sample means for the distribution.
+```{r setup}
+library(MATH4753rund0006)
+MATH4753rund0006::miguelcltb(n=5,iter=10000,p=0.5)
+```
+
+#### mynorm function creates a graph of maximum likelihood from a normal distribution. First, it uses a vector to pass data through and then creates a range of means and standard deviations.
+```{r}
+library(MATH4753rund0006)
+mynormfunction(x=c(5,7,7,8,10),mu=seq(5,10,length=1000),sig=seq(0.1,4,length=1000))
+```
+
+#### myboot2 creates a histogram of Bootstrap sample statistics. First you pass a vector of data through the x parameter and then call desired statistic you want to sample. Finally you put the confidence level in the alpha parameter.
+```{r}
+library(MATH4753rund0006)
+myboot2(x=c(1,3,4,5,3,2), fun="mean", alpha=0.05)
+```
+
+#### scatterhist creates a scatterplot layered over a barplot, and was my first package back when I was still learning how to make packages. It passes 2 vectors of data through and plots them on an x and y axis. 
+```{r}
+library(MATH4753rund0006)
+scatterhist(c(1,5,8,7),c(7,2,9,3),"x-axis","y-axis")
+```
